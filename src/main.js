@@ -9,7 +9,12 @@ Vue.config.productionTip = false;
 Vue.directive('highlight', {
     bind(el, binding){
       // el.style.backgroundColor = 'gray';
-      el.style.backgroundColor = binding.value;
+      // el.style.backgroundColor = binding.value;
+      if(binding.arg == 'background'){
+        el.style.backgroundColor = binding.value;
+      } else {
+        el.style.color = binding.value;
+      }
     }
 
 });
